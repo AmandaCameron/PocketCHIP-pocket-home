@@ -27,8 +27,9 @@ void BluetoothDeviceListItem::paintButton(Graphics &g, bool isMouseOverButton, b
 
   g.setFont(Font(getLookAndFeel().getTypefaceForFont(Font())));
   g.setFont(h * 0.5);
+
   g.setColour(findColour(ListBox::ColourIds::textColourId));
-  g.drawText(getName(), inset.reduced(h * 0.2, 0), Justification::centredLeft, true);
+  g.drawText(device->name, inset.reduced(h * 0.2, 0), Justification::centredLeft, true);
 }
 
 SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
@@ -59,8 +60,7 @@ SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
   addAndMakeVisible(btIcon);
 
   // create back button
-  backButton = createImageButton(
-                                 "Back", createImageFromFile(assetFile("backIcon.png")));
+  backButton = createImageButton("Back", createImageFromFile(assetFile("backIcon.png")));
   backButton->addListener(this);
   backButton->setAlwaysOnTop(true);
   addAndMakeVisible(backButton);
