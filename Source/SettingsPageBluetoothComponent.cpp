@@ -79,12 +79,7 @@ SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
 
 SettingsPageBluetoothComponent::~SettingsPageBluetoothComponent() {}
 
-void SettingsPageBluetoothComponent::paint(Graphics &g) {
-    auto bounds = getLocalBounds();
-    g.fillAll(bgColor);
-    g.drawImage(bgImage,bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight(), 0, 0, bgImage.getWidth(), bgImage.getHeight(), false);
-}
-
+void SettingsPageBluetoothComponent::paint(Graphics &g) {}
 
 void SettingsPageBluetoothComponent::resized() {
   auto bounds = getLocalBounds();
