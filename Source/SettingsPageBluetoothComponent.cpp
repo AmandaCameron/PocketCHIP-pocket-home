@@ -37,6 +37,10 @@ SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
 
   // create device list "page"
   deviceListPage = new Grid(1, 4);
+  
+  icons.arrowIcon = Drawable::createFromImageFile(assetFile("backIcon.png"));
+  auto xf = AffineTransform::identity.rotated(M_PI);
+  icons.arrowIcon->setTransform(xf);
 
   for (auto btDevice : getBluetoothStatus().devices) {
     auto item = new BluetoothDeviceListItem(btDevice, &icons);
@@ -71,14 +75,15 @@ SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
   connectionPage->addAndMakeVisible(connectionButton);
 
   //icons.checkIcon = Drawable::createFromImageData(BinaryData::check_png, BinaryData::check_pngSize);
-  icons.arrowIcon = Drawable::createFromImageFile(assetFile("backIcon.png"));
-  auto xf = AffineTransform::identity.rotated(M_PI);
-  icons.arrowIcon->setTransform(xf);
 }
 
 SettingsPageBluetoothComponent::~SettingsPageBluetoothComponent() {}
 
-void SettingsPageBluetoothComponent::paint(Graphics &g) {}
+void SettingsPageBluetoothComponent::paint(Graphics &g) {
+    auto bounds = getLocalBounds();
+    g.fillAll(bgColor);
+    g.drawImage(bgImage,bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight(), 0, 0, bgImage.getWidth(), bgImage.getHeight(), false);
+}
 
 
 void SettingsPageBluetoothComponent::resized() {
