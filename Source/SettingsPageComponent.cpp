@@ -321,6 +321,7 @@ void SettingsPageComponent::resized() {
 
     Component *settingsItems[] = {
       wifiCategoryItem, nullptr,
+      btCategoryItem, nullptr,
       screenBrightnessSlider, nullptr,
       volumeSlider, nullptr,
       advanced
