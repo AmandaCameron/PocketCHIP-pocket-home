@@ -32,6 +32,9 @@ void BluetoothDeviceListItem::paintButton(Graphics &g, bool isMouseOverButton, b
 }
 
 SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
+  bgColor = Colour(0xffd23c6d);
+  bgImage = createImageFromFile(assetFile("settingsBackground.png"));
+
   pageStack = new PageStackComponent();
   addAndMakeVisible(pageStack);
 
@@ -80,7 +83,11 @@ SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
 
 SettingsPageBluetoothComponent::~SettingsPageBluetoothComponent() {}
 
-void SettingsPageBluetoothComponent::paint(Graphics &g) {}
+void SettingsPageBluetoothComponent::paint(Graphics &g) {
+    auto bounds = getLocalBounds();
+    g.fillAll(bgColor);
+    g.drawImage(bgImage,bounds.getX(), bounds.getY(), bounds.getWidth(), bounds.getHeight(), 0, 0, bgImage.getWidth(), bgImage.getHeight(), false);
+}
 
 void SettingsPageBluetoothComponent::resized() {
   auto bounds = getLocalBounds();

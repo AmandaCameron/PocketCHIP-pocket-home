@@ -55,6 +55,9 @@ public:
   void resized() override;
 
 private:
+  Colour bgColor;
+  Image bgImage;
+
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SettingsPageBluetoothComponent)
 
   void buttonClicked(Button *) override;

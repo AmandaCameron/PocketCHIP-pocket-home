@@ -298,7 +298,7 @@ SettingsPageComponent::SettingsPageComponent(LauncherComponent* lc) {
 
 SettingsPageComponent::~SettingsPageComponent() {}
 
-void SettingsPageComponent::deleteIcon(String name, String shell){
+void SettingsPageComponent::deleteIcon(String name, String shell) {
   advancedPage->deleteIcon(name, shell);
 }
 
