@@ -17,7 +17,7 @@ void BluetoothDeviceListItem::paintButton(Graphics &g, bool isMouseOverButton, b
   g.fillPath(listOutline);
 
   if (device->connected) {
-    icons->checkIcon->setSize(iconBounds.getWidth(), iconBounds.getHeight());
+    icons->checkIcon->setSize(w, h);
     icons->checkIcon->drawWithin(g, iconBounds, RectanglePlacement::fillDestination, 1.0f);
   }
 
@@ -25,9 +25,10 @@ void BluetoothDeviceListItem::paintButton(Graphics &g, bool isMouseOverButton, b
 //  icons->arrowIcon->drawWithin(g, Rectangle<float>(w - (h/8), contentHeight + 8, contentHeight, contentHeight),
 //                               RectanglePlacement::fillDestination, 1.0f);
 
-  // g.setFont(Font(getLookAndFeel().getTypefaceForFont(Font())));
-  g.setFont(h * 0.5);
-  g.setColour(findColour(ListBox::ColourIds::textColourId));
+  // g.setFont(getLookAndFeel().getTypefaceForFont(Font()));
+  //g.setColour(findColour(ListBox::ColourIds::textColourId));
+  g.setColor(Colours::black);
+  g.setFont(Font(h * 0.6));
   g.drawText(getName(), inset.reduced(h * 0.2, 0), Justification::centredLeft, true);
 }
 
