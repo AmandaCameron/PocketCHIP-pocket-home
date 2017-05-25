@@ -25,9 +25,8 @@ void BluetoothDeviceListItem::paintButton(Graphics &g, bool isMouseOverButton, b
 //  icons->arrowIcon->drawWithin(g, Rectangle<float>(w - (h/8), contentHeight + 8, contentHeight, contentHeight),
 //                               RectanglePlacement::fillDestination, 1.0f);
 
-  g.setFont(Font(getLookAndFeel().getTypefaceForFont(Font())));
+  // g.setFont(Font(getLookAndFeel().getTypefaceForFont(Font())));
   g.setFont(h * 0.5);
-
   g.setColour(findColour(ListBox::ColourIds::textColourId));
   g.drawText(device->name, inset.reduced(h * 0.2, 0), Justification::centredLeft, true);
 }
