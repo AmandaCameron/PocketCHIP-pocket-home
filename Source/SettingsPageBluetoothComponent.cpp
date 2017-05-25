@@ -17,7 +17,7 @@ void BluetoothDeviceListItem::paintButton(Graphics &g, bool isMouseOverButton, b
   g.fillPath(listOutline);
 
   if (device->connected) {
-    icons->checkIcon->setSize(iconBounds.getWidth(), iconBounds.getHeight());
+    // icons->checkIcon->setSize(iconBounds.getWidth(), iconBounds.getHeight());
     icons->checkIcon->drawWithin(g, iconBounds, RectanglePlacement::fillDestination, 1.0f);
   }
 
