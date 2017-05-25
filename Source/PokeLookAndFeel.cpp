@@ -22,7 +22,7 @@ cursor(MouseCursor::NoCursor)
   setColour(TextEditor::backgroundColourId, chipLightPink);
   setColour(TextEditor::textColourId, Colours::white);
   setColour(ListBox::backgroundColourId, Colours::white);
-  setColour(ListBox::textColourId, Colours::white);
+  setColour(ListBox::textColourId, Colours::black);
   setColour(SwitchComponent::colorIdBackground, chipLightPink);
   setColour(SwitchComponent::colorIdHandle, Colours::white);
   setColour(SwitchComponent::colorIdHandleOff, chipPink);
