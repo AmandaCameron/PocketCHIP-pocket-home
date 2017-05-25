@@ -50,7 +50,7 @@ SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
   }
 
   btIcon = new ImageComponent("BT Icon");
-  btIcon->setImage(Drawable::createFromImageFile(assetFile("bluetoothIcon.png")));
+  btIcon->setImage(createImageFromFile(assetFile("bluetoothIcon.png")));
   addAndMakeVisible(btIcon);
 
   // create back button
