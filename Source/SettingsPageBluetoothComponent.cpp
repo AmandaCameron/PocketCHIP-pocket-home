@@ -41,6 +41,7 @@ SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
   icons.arrowIcon = Drawable::createFromImageFile(assetFile("backIcon.png"));
   auto xf = AffineTransform::identity.rotated(M_PI);
   icons.arrowIcon->setTransform(xf);
+  icons.checkIcon = Drawable::createFromImageData(BinaryData::check_png, BinaryData::check_pngSize);
 
   for (auto btDevice : getBluetoothStatus().devices) {
     auto item = new BluetoothDeviceListItem(btDevice, &icons);
