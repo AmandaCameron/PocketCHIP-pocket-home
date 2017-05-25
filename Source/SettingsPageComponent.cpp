@@ -347,6 +347,8 @@ void SettingsPageComponent::buttonClicked(Button *button) {
   } else if (button == wifiCategoryItem->button) {
     wifiPage->updateAccessPoints();
     getMainStack().pushPage(wifiPage, PageStackComponent::kTransitionTranslateHorizontal);
+  } else if (button == btCategoryItem->button) {
+    getMainStack().pushPage(btPage, PageStackComponent::kTransitionTranslateHorizontal);
   } else if (button == advanced) {
     getMainStack().pushPage(advancedPage, PageStackComponent::kTransitionTranslateHorizontal);
   }
