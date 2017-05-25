@@ -17,7 +17,7 @@ void BluetoothDeviceListItem::paintButton(Graphics &g, bool isMouseOverButton, b
   g.fillPath(listOutline);
 
   if (device->connected) {
-    // icons->checkIcon->setSize(iconBounds.getWidth(), iconBounds.getHeight());
+    icons->checkIcon->setSize(iconBounds.getWidth(), iconBounds.getHeight());
     icons->checkIcon->drawWithin(g, iconBounds, RectanglePlacement::fillDestination, 1.0f);
   }
 
@@ -42,7 +42,7 @@ SettingsPageBluetoothComponent::SettingsPageBluetoothComponent() {
   auto xf = AffineTransform::identity.rotated(M_PI);
   icons.arrowIcon->setTransform(xf);
 
-  icons.checkIcon = Drawable::createFromImageData(BinaryData::check_png, BinaryData::check_pngSize);
+  icons.checkIcon = Drawable::createFromImageFile(assetFile("check.png"));
 
   for (auto btDevice : getBluetoothStatus().devices) {
     auto item = new BluetoothDeviceListItem(btDevice, &icons);
