@@ -284,10 +284,17 @@ SettingsPageComponent::SettingsPageComponent(LauncherComponent* lc) {
   addAndMakeVisible(wifiCategoryItem);
   getWifiStatus().addListener(wifiCategoryItem);
 
+
+  btCategoryItem = new BluetoothCategoryItemComponent();
+  btCategoryItem->button->addListener(this);
+  addAndMakeVisible(btCategoryItem);
+  getBluetoothStatus().addListener(btCategoryItem);
+
   addAndMakeVisible(screenBrightnessSlider);
   addAndMakeVisible(volumeSlider);
 
   wifiPage = new SettingsPageWifiComponent();
+  btPage = new SettingsPageBluetoothComponent();
 }
 
 SettingsPageComponent::~SettingsPageComponent() {}
